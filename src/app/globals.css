@@ -1,0 +1,345 @@
+/**
+ * @author Shiva Nagendra Babu Kore
+ */
+/*---break---
+ */
+@plugin "tailwindcss-animate";
+
+@import "tailwindcss";
+
+/*---break---
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+  font-size: 13px;
+}
+
+/* Prevent text selection on landing page */
+* {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Allow selection for form inputs and chat messages */
+input, textarea, .select-text, [class*="select-text"] {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+/* Prevent image dragging and copying */
+img {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: none !important;
+}
+
+/* Disable right-click context menu */
+body {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+/*---break---
+ */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  /*---break---
+ */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  /*---break---
+ */
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+/*---break---
+ */
+/* VS Code Light Theme Colors */
+:root {
+  --radius: 0.25rem;
+  
+  /* Task List Typography & Spacing */
+  --task-title-size: 1rem;
+  --task-description-size: 0.9rem;
+  --task-badge-size: 0.75rem;
+  --task-row-padding-x: 0.5rem;
+  --task-row-padding-y: 0.5rem;
+  --task-line-height: 1.5rem;
+  --task-icon-size: 1rem;
+  
+  /* VS Code Light Theme - Main Colors */
+  --vscode-editor-bg: #ffffff;
+  --vscode-sidebar-bg: #f3f3f3;
+  --vscode-activitybar-bg: #2c2c2c;
+  --vscode-titlebar-bg: #dddddd;
+  --vscode-statusbar-bg: #007acc;
+  --vscode-tab-active-bg: #ffffff;
+  --vscode-tab-inactive-bg: #ececec;
+  --vscode-tab-border: #f3f3f3;
+  --vscode-border: #e5e5e5;
+  --vscode-input-bg: #ffffff;
+  --vscode-input-border: #cecece;
+  --vscode-focus-border: #0078d4;
+  --vscode-list-hover: #e8e8e8;
+  --vscode-list-active: #0060c0;
+  --vscode-list-active-text: #ffffff;
+  --vscode-text: #333333;
+  --vscode-text-muted: #6e6e6e;
+  --vscode-icon: #424242;
+  --vscode-link: #006ab1;
+  --vscode-button-bg: #0078d4;
+  --vscode-button-text: #ffffff;
+  --vscode-button-secondary-bg: #5f6a79;
+  --vscode-success: #388a34;
+  --vscode-warning: #bf8803;
+  --vscode-error: #e51400;
+  --vscode-info: #1a85ff;
+  
+  /* shadcn mappings to VS Code colors */
+  --background: var(--vscode-editor-bg);
+  --foreground: var(--vscode-text);
+  --card: var(--vscode-editor-bg);
+  --card-foreground: var(--vscode-text);
+  --popover: var(--vscode-editor-bg);
+  --popover-foreground: var(--vscode-text);
+  --primary: var(--vscode-button-bg);
+  --primary-foreground: var(--vscode-button-text);
+  --secondary: var(--vscode-sidebar-bg);
+  --secondary-foreground: var(--vscode-text);
+  --muted: var(--vscode-tab-inactive-bg);
+  --muted-foreground: var(--vscode-text-muted);
+  --accent: var(--vscode-list-hover);
+  --accent-foreground: var(--vscode-text);
+  --destructive: var(--vscode-error);
+  --border: var(--vscode-border);
+  --input: var(--vscode-input-bg);
+  --ring: var(--vscode-focus-border);
+  --chart-1: #0078d4;
+  --chart-2: #388a34;
+  --chart-3: #bf8803;
+  --chart-4: #e51400;
+  --chart-5: #6e6e6e;
+  --sidebar: var(--vscode-sidebar-bg);
+  --sidebar-foreground: var(--vscode-text);
+  --sidebar-primary: var(--vscode-button-bg);
+  --sidebar-primary-foreground: var(--vscode-button-text);
+  --sidebar-accent: var(--vscode-list-hover);
+  --sidebar-accent-foreground: var(--vscode-text);
+  --sidebar-border: var(--vscode-border);
+  --sidebar-ring: var(--vscode-focus-border);
+}
+/*---break---
+ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+/* VS Code Specific Styles */
+.vscode-titlebar {
+  background-color: var(--vscode-titlebar-bg);
+  border-bottom: 1px solid var(--vscode-border);
+}
+
+.vscode-sidebar {
+  background-color: var(--vscode-sidebar-bg);
+  border-right: 1px solid var(--vscode-border);
+}
+
+.vscode-activitybar {
+  background-color: #333333;
+}
+
+.vscode-statusbar {
+  background-color: #007acc;
+  color: white;
+  font-size: 11px;
+}
+
+.vscode-editor {
+  background-color: var(--vscode-editor-bg);
+}
+
+.vscode-tab {
+  background-color: var(--vscode-tab-inactive-bg);
+  border: 1px solid var(--vscode-tab-border);
+  border-bottom: none;
+  font-size: 11px;
+}
+
+.vscode-tab-active {
+  background-color: var(--vscode-tab-active-bg);
+  border-bottom: 1px solid var(--vscode-tab-active-bg);
+}
+
+.vscode-input {
+  background-color: var(--vscode-input-bg);
+  border: 1px solid var(--vscode-input-border);
+  color: var(--vscode-text);
+  font-size: 11px;
+}
+
+.vscode-input:focus {
+  border-color: var(--vscode-focus-border);
+  outline: none;
+}
+
+.vscode-button {
+  background-color: var(--vscode-button-bg);
+  color: var(--vscode-button-text);
+  border: none;
+  padding: 3px 12px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.vscode-button:hover {
+  background-color: #026ec1;
+}
+
+.vscode-list-item {
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.vscode-list-item:hover {
+  background-color: var(--vscode-list-hover);
+}
+
+.vscode-list-item-active {
+  background-color: var(--vscode-list-active);
+  color: var(--vscode-list-active-text);
+}
+
+/* VS Code Explorer/Tree View Style */
+.vscode-tree-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--task-title-size);
+  line-height: var(--task-line-height);
+  padding: var(--task-row-padding-y) var(--task-row-padding-x);
+}
+
+.vscode-tree-item .task-title {
+  font-size: var(--task-title-size);
+}
+
+.vscode-tree-item .task-description {
+  font-size: var(--task-description-size);
+}
+
+.vscode-tree-item .task-badge {
+  font-size: var(--task-badge-size);
+}
+
+.vscode-tree-item .task-icon {
+  width: var(--task-icon-size);
+  height: var(--task-icon-size);
+}
+
+.vscode-tree-item:hover {
+  background-color: var(--vscode-list-hover);
+}
+
+.vscode-tree-item-selected {
+  background-color: #cce5ff;
+}
+
+.vscode-tree-item-focused {
+  background-color: var(--vscode-list-active);
+  color: var(--vscode-list-active-text);
+}
+
+/* VS Code Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.4);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.7);
+}
+
+/* Monospace font for code-like elements */
+.font-mono {
+  font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
